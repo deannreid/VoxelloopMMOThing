@@ -23,14 +23,13 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Network.isClient) {
-		
 			if (GetComponentInChildren<NetworkView> ().isMine) {
 				print ("Created ma' player! Username: " + user);
-				FPCScript = GameObject.Find(user).GetComponent("FirstPersonContro/ller");
-				FPCScript = enabled;
+//				((Behaviour)GameObject.Find(user).GetComponent("FirstPersonController")).enabled = false;
 			} else {
 				print ("Found someone elses player!");
 				GetComponentInChildren<Camera> ().enabled = false;
+				((Behaviour)GameObject.Find(user).GetComponent("FirstPersonController")).enabled = false;
 				GetComponentInChildren<AudioListener> ().enabled = false;
 				GetComponentInChildren<CharacterController> ().enabled = false;
 				GameObject.Find(user).GetComponent<TextMesh> ().text = user;
