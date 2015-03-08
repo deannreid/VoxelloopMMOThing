@@ -1,9 +1,9 @@
-*android/
-*build/
-*build64/
-*headless/
-*Library/metadata
-*build/
-*Temp/
+android/
+build/
+build64/
+headless/
+Library/metadata
+build/
+Temp/
 *.exe
 *.bin
